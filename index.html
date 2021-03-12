@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="navBanner">
+        <div class="NavText">
+            <h1>ECC: <small>Currency Converter</small> </h1>
+        </div>
+        <div class="navLinks">
+            <span>Converter</span>
+            <span>Stats</span>
+            <span>Strength List</span>
+        </div>
+    </div>
+    <div class="topBanner">
+    </div>
+
+    <div class="calcStructure">
+        <div class="cStructureInner">
+
+            <label for="" class="calcValue">Convert</label>
+            <input type="number"  class="baseValue" placeholder="Enter value" name="" id="value">
+
+            <select name="" class="optionsBasedOnKeys" id="optionsConversionFrom">
+            </select>
+
+            <label for="" class="calcValue">to</label>
+            <select name="" class="optionsBasedOnKeys" id="optionsConversionTo">
+            </select>
+
+            <button onclick="handleClick()" class="btn">Convert</button>
+            <label for="" class="calcValue" id="calcValue">=</label>
+            <br><br>
+            <label for="" class="calcValue" style="display: none;" id="labelCurFrom">Current rate FROM: </label>
+            <label for="" class="calcValue" id="curRateFrom"></label>
+            <br>
+            <label for="" class="calcValue" style="display: none;" id="labelCurTo">Current rate TO: </label>
+            <label for="" class="calcValue" id="curRateTo"></label>
+        </div>
+    </div>
+    <div class="currencyStats">
+        <div class="averageValue">
+            <i class="fas fa-weight fa-3x"></i>
+            <h3>Avg Value over 90 days</h3>
+            <br>
+            <h2 id="averageValueIdFrom"></h2>
+            <h2 id="averageValueIdTo"></h2>
+        </div>
+    
+    
+        <div class="currencyStrongerThanEuro">
+            <!-- <pre id="output"></pre> -->
+            <i class="fas fa-dumbbell fa-3x"></i>
+            <br>
+            <h3>Currencies stronger than the Euro:</h3>
+            <br>
+            <h2 id="currencyStrongerThanEuro"></h2>
+        </div>
+        <br>
+    </div>      
+    <br>
+
+
+    <div class="listAccordingToStrength">
+        <br>
+        <h3 for="" class="strength" style="padding-left: 40px;">Currencies According To Strength</h3>
+        <div class="rateList">
+            <ul style="list-style-type:none" class="sortedList" id="sortedList" ></ol>
+        </div>
+       
+        <div  class="rateList2">
+            <ul style="list-style-type:none" class="sortedList"  id="sortedList2"></ul>
+        </div>
+   
+    </div>
+    
+
+
+
+
+    <div class="chart-container" style="position: relative; height:25vh; width:90vw; margin-bottom: 30%;">
+        <canvas id="myChart"></canvas>
+    </div>
+    <br>
+    <div class="space"></div>
+    <div class="chart-container2" style="position: relative; height:20vh; width:90vw;">
+        <canvas id="WeakestChart"></canvas>
+    </div>
+    <div class="space1"></div>
+    <div class="chart-container1" style="position: relative; height:25vh; width:90vw;">
+        <canvas id="WeakChart"></canvas>
+    </div>
+    
+    
+    
+
+   
+    <br><br>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
